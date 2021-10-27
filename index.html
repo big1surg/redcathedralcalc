@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+
+.col-sm-1{
+ padding: 10px 10px 10px 10px;
+}
+
+
+
+.jumbotron{
+	/*background-image: url("redcath.jpg");*/
+	background-image: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.9) 100%), url("redcath.jpg");
+	background-size: cover;
+}
+
+	
+</style>
+
+
+
+</head>
+<body>
+<!-- Content will go here -->
+<div class="container-fluid">
+
+<div class="jumbotron">
+  <h1 class="display-4 text-red">The Red Cathedral Calculator</h1>
+  <h5>Quickly score your points</h5>
+</div>
+
+
+<div class ="container">
+	<form>
+		<div class="form-group row">
+			<label class="col-sm-1 col-form-label"></label>
+			<label for="played" class="col-sm-1 col-form-label">Played?</label>
+			<label for="name" class="col-sm-1 col-form-label">Prestige</label>
+			<label for="row1" class="col-sm-1 col-form-label">Tower 1</label>
+			<label for="row2" class="col-sm-1 col-form-label">Tower 2</label>
+			<label for="row3" class="col-sm-1 col-form-label">Tower 3</label>
+			<label for="row4" class="col-sm-1 col-form-label">Tower 4</label>
+			<label for="row5" class="col-sm-1 col-form-label">Tower 5</label>
+			<label for="row6" class="col-sm-1 col-form-label">Tower 6</label>
+		</div>
+		<div class="form-group row">
+			<label for = "totalPointsLabel" class="col-sm-3 col-form-label">Total Points</label>
+			<div class = "col-sm-1">
+				<input id="col1TP" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="col2TP" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="col3TP" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="col4TP" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="col5TP" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="col6TP" placeholder="0">
+			</div>
+
+		</div>
+		
+<!-----------------------------------------------------------player score --------------------------------------->
+		<div class="form-group row" style="background-color: #e0e0eb;">
+			<label for = "p1" class="col-sm-1 col-form-label">P1</label>
+			<div class = "col-sm-1 form-check">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p1Prestige" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p1r1" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p1r2" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p1r3" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p1r4" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p1r5" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p1r6" placeholder="0">
+			</div>
+		</div>
+<!-----------------------------------------------------------player score --------------------------------------->
+		<div class="form-group row">
+			<label for = "p2" class="col-sm-1 col-form-label">P2</label>
+			<div class = "col-sm-1 form-check">
+				<input class="form-check-input" type="checkbox" value="" id="player2Present">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p2Prestige" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p2r1" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p2r2" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p2r3" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p2r4" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p2r5" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p2r6" placeholder="0">
+			</div>
+		</div>
+<!-----------------------------------------------------------player score --------------------------------------->
+		<div class="form-group row" style="background-color: #e0e0eb;">
+			<label for = "p3" class="col-sm-1 col-form-label" >P3</label>
+			<div class = "col-sm-1 form-check">
+				<input class="form-check-input" type="checkbox" value="" id="player3Present">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p3Prestige" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p3r1" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p3r2" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p3r3" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p3r4" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p3r5" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p3r6" placeholder="0">
+			</div>
+		</div>
+<!-----------------------------------------------------------player score --------------------------------------->
+		<div class="form-group row">
+			<label for = "p4" class="col-sm-1 col-form-label">P4</label>
+			<div class = "col-sm-1 form-check">
+				<input class="form-check-input" type="checkbox" value="" id="player4Present">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p4Prestige" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p4r1" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p4r2" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p4r3" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p4r4" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p4r5" placeholder="0">
+			</div>
+			<div class = "col-sm-1">
+				<input id="p4r6" placeholder="0">
+			</div>
+		</div>
+		<button type="button" onclick="getPlayerCount()" class="btn btn-primary">Calculate</button>
+	</form>
+
+	<p id="playerCountValue"></p>
+	<div id="resultsP1">
+	</div>
+		<div id="resultsP2">
+	</div>
+		<div id="resultsP3">
+	</div>
+		<div id="resultsP4">
+	</div>
+
+</div> <!---container-->
+
+<script>
+function getPlayerCount() {
+	var playerCount = 1;
+	for(var i=0; i<3;i++){
+		if(document.getElementById('player'+(i+2)+'Present').checked){
+			playerCount++;
+		}
+	}
+	document.getElementById('playerCountValue').innerHTML = 'Scoring a ' + playerCount + ' player game';
+	if(playerCount == 1 || playerCount == 2){
+		soloTwoPlayerGame();
+	}else if (playerCount == 3){
+		threePlayerGame();
+	}else {
+		fourPlayerGame();
+	}
+};
+
+function soloTwoPlayerGame(){
+	//get player names and add them to result
+	
+	var player1Score = [];
+	var player2Score = [];
+	
+	var finalScoreP1 = 0;
+	var finalScoreP2 = 0;
+	
+	//get prestige points
+	var player1PrestigePoints = parseInt(document.getElementById('p1Prestige').value);
+	var player2PrestigePoints = parseInt(document.getElementById('p2Prestige').value);
+	
+	//col total points
+	var col1 = document.getElementById('col1TP').value;
+	var col2 = document.getElementById('col2TP').value;
+	var col3 = document.getElementById('col3TP').value;
+	var col4 = document.getElementById('col4TP').value;
+	
+	//get player 1 points
+	var tower1player1 = document.getElementById('p1r1').value;
+	var tower2player1 = document.getElementById('p1r2').value;
+	var tower3player1 = document.getElementById('p1r3').value;
+	var tower4player1 = document.getElementById('p1r4').value;
+	
+	//get player 2 points
+	var tower1player2 = document.getElementById('p2r1').value;
+	var tower2player2 = document.getElementById('p2r2').value;
+	var tower3player2 = document.getElementById('p2r3').value;
+	var tower4player2 = document.getElementById('p2r4').value;
+
+	//score tower 1
+		//tie
+	if(tower1player1 == tower1player2){
+		player1Score.push(0);
+		player2Score.push(0);
+	}else if (tower1player1>tower1player2){
+		player1Score.push(col1);
+		if(tower1player2>0){
+			player2Score.push(Math.floor(col1/3));
+		}else{
+			player2Score.push(0);
+		}
+	}else if (tower1player1<tower1player2){
+		player2Score.push(col1);
+		if(tower1player1>0){
+			player1Score.push(Math.floor(col1/3));
+		}else{
+			player1Score.push(0);
+		}
+	}
+	
+	//score tower 2
+		//tie
+	if(tower2player1 == tower2player2){
+		player1Score.push(0);
+		player2Score.push(0);
+	}else if (tower2player1>tower2player2){
+		player1Score.push(col2);
+		if(tower2player2>0){
+			player2Score.push(Math.floor(col2/3));
+		}else{
+			player2Score.push(0);
+		}
+	}else if (tower2player1<tower2player2){
+		player2Score.push(col2);
+		if(tower2player1>0){
+			player1Score.push(Math.floor(col2/3));
+		}else{
+			player1Score.push(0);
+		}
+	}
+	
+	//score tower 3
+		//tie
+	if(tower3player1 == tower3player2){
+		player1Score.push(0);
+		player2Score.push(0);
+	}else if (tower3player1>tower3player2){
+		player1Score.push(col3);
+		if(tower3player2>0){
+			player2Score.push(Math.floor(col3/3));
+		}else{
+			player2Score.push(0);
+		}
+	}else if (tower3player1<tower3player2){
+		player2Score.push(col3);
+		if(tower3player1>0){
+			player1Score.push(Math.floor(col3/3));
+		}else{
+			player1Score.push(0);
+		}
+	}
+	
+	//score tower 4
+		//tie
+	if(tower4player1 == tower4player2){
+		player1Score.push(0);
+		player2Score.push(0);
+	}else if (tower4player1>tower4player2){
+		player1Score.push(col4);
+		if(tower4player2>0){
+			player2Score.push(Math.floor(col4/3));
+		}else{
+			player2Score.push(0);
+		}
+	}else if (tower4player1<tower4player2){
+		player2Score.push(col4);
+		if(tower4player1>0){
+			player1Score.push(Math.floor(col4/3));
+		}else{
+			player1Score.push(0);
+		}
+	}
+	
+	//sum up pts
+	for(var k=0;k<4;k++){
+		finalScoreP1+=parseInt(player1Score[k]);
+		finalScoreP2+=parseInt(player2Score[k]);
+	}
+	//sum scores
+	document.getElementById('resultsP1').innerHTML = "Player 1: " +player1Score + " 	Tower Score: " + finalScoreP1 + " 	Prestige: " + player1PrestigePoints + " 	Final Score: " + (finalScoreP1+player1PrestigePoints);
+	document.getElementById('resultsP2').innerHTML = "Player 2: " +player2Score + " 	Tower Score: " + finalScoreP2 + " 	Prestige: " + player2PrestigePoints + " 	Final Score: " + (finalScoreP2+player2PrestigePoints);
+	
+	
+};
+
+
+
+/*function threePlayerGame(){
+	//get player names and add them to result
+	
+	var player1Score = [];
+	var player2Score = [];
+	var player3Score = [];
+	
+	var finalScoreP1 = 0;
+	var finalScoreP2 = 0;
+	var finalScoreP3 = 0;
+	
+	//get prestige points
+	var player1PrestigePoints = parseInt(document.getElementById('p1Prestige').value);
+	var player2PrestigePoints = parseInt(document.getElementById('p2Prestige').value);
+	var player3PrestigePoints = parseInt(document.getElementById('p3Prestige').value);
+	
+	//col total points
+	var col1 = document.getElementById('col1TP').value;
+	var col2 = document.getElementById('col2TP').value;
+	var col3 = document.getElementById('col3TP').value;
+	var col4 = document.getElementById('col4TP').value;
+	var col5 = document.getElementById('col5TP').value;
+	
+	//get player 1 points
+	var tower1player1 = document.getElementById('p1r1').value;
+	var tower2player1 = document.getElementById('p1r2').value;
+	var tower3player1 = document.getElementById('p1r3').value;
+	var tower4player1 = document.getElementById('p1r4').value;
+	var tower5player1 = document.getElementById('p1r5').value;
+	
+	//get player 2 points
+	var tower1player2 = document.getElementById('p2r1').value;
+	var tower2player2 = document.getElementById('p2r2').value;
+	var tower3player2 = document.getElementById('p2r3').value;
+	var tower4player2 = document.getElementById('p2r4').value;
+	var tower5player2 = document.getElementById('p2r5').value;
+
+	//get player 3 points
+	var tower1player3 = document.getElementById('p3r1').value;
+	var tower2player3 = document.getElementById('p3r2').value;
+	var tower3player3 = document.getElementById('p3r3').value;
+	var tower4player3 = document.getElementById('p3r4').value;
+	var tower5player3 = document.getElementById('p3r5').value;
+	
+	//score tower 1
+		//tie
+	if(tower1player1 == tower1player2 && tower1player2 == tower1player3){
+		player1Score.push(Math.floor((col1+(col1/2)+(col1/4))/3));
+		player2Score.push(Math.floor((col1+(col1/2)+(col1/4))/3));
+		player3Score.push(Math.floor((col1+(col1/2)+(col1/4))/3));
+	}else if (tower1player1 >= tower1player2 && tower1player1 >= tower1player3 ){
+		//player 1 can be higher or equal to highest
+		if(tower1player1 == tower1player2){
+			//player 1 and 2 split the points they would have gotten, so full + half /2
+			player1Score.push(Math.floor((col1+(col1/2))/2);
+			player2Score.push(Math.floor((col1+(col1/2))/2);
+			//give points to player 3
+			player3Score.push(Math.floor(col1/4));
+		}else if (tower1player1 == tower1player3){
+			player1Score.push(Math.floor((col1+(col1/2))/2);
+			player3Score.push(Math.floor((col1+(col1/2))/2);
+			//give points to player 2
+			player2Score.push(Math.floor(col1/4));
+		}else if( tower1player1 > tower1player2 && tower1player1>tower1player3){
+			player1Score.push(col1);
+			if(tower1player2 == tower1player3){
+				player2Score.push(Math.floor(((col1/2) + (col1/4))/2));
+				player3Score.push(Math.floor(((col1/2) + (col1/4))/2));
+			}else if(tower1player2 > tower1player3){
+				//player 2 is second place
+				player2Score.push(Math.floor(col1/2));
+				player3Score.push(Math.floor(col1/4));
+			}else {
+				//player 3 is second place
+				player3Score.push(Math.floor(col1/2));
+				player2Score.push(Math.floor(col1/4));
+			}
+		}
+	}else if {
+
+	}
+	
+	//score tower 2
+		//tie
+	if(tower2player1 == tower2player2){
+		player1Score.push(0);
+		player2Score.push(0);
+	}else if (tower2player1>tower2player2){
+		player1Score.push(col2);
+		if(tower2player2>0){
+			player2Score.push(Math.floor(col2/3));
+		}else{
+			player2Score.push(0);
+		}
+	}else if (tower2player1<tower2player2){
+		player2Score.push(col2);
+		if(tower2player1>0){
+			player1Score.push(Math.floor(col2/3));
+		}else{
+			player1Score.push(0);
+		}
+	}
+	
+	//score tower 3
+		//tie
+	if(tower3player1 == tower3player2){
+		player1Score.push(0);
+		player2Score.push(0);
+	}else if (tower3player1>tower3player2){
+		player1Score.push(col3);
+		if(tower3player2>0){
+			player2Score.push(Math.floor(col3/3));
+		}else{
+			player2Score.push(0);
+		}
+	}else if (tower3player1<tower3player2){
+		player2Score.push(col3);
+		if(tower3player1>0){
+			player1Score.push(Math.floor(col3/3));
+		}else{
+			player1Score.push(0);
+		}
+	}
+	
+	//score tower 4
+		//tie
+	if(tower4player1 == tower4player2){
+		player1Score.push(0);
+		player2Score.push(0);
+	}else if (tower4player1>tower4player2){
+		player1Score.push(col4);
+		if(tower4player2>0){
+			player2Score.push(Math.floor(col4/3));
+		}else{
+			player2Score.push(0);
+		}
+	}else if (tower4player1<tower4player2){
+		player2Score.push(col4);
+		if(tower4player1>0){
+			player1Score.push(Math.floor(col4/3));
+		}else{
+			player1Score.push(0);
+		}
+	}
+	
+	//sum up pts
+	for(var k=0;k<4;k++){
+		finalScoreP1+=parseInt(player1Score[k]);
+		finalScoreP2+=parseInt(player2Score[k]);
+	}
+	//sum scores
+	document.getElementById('resultsP1').innerHTML = "Player 1: " +player1Score + " 	Tower Score: " + finalScoreP1 + " 	Prestige: " + player1PrestigePoints + " 	Final Score: " + (finalScoreP1+player1PrestigePoints);
+	document.getElementById('resultsP2').innerHTML = "Player 2: " +player2Score + " 	Tower Score: " + finalScoreP2 + " 	Prestige: " + player2PrestigePoints + " 	Final Score: " + (finalScoreP2+player2PrestigePoints);
+	
+	
+};*/
+
+
+function threePlayerGame(){
+	//get player names and add them to result
+	
+	var player1Score = [];
+	var player2Score = [];
+	var player3Score = [];
+	
+	var finalScoreP1 = 0;
+	var finalScoreP2 = 0;
+	var finalScoreP3 = 0;
+	
+	//get prestige points
+	var player1PrestigePoints = parseInt(document.getElementById('p1Prestige').value);
+	var player2PrestigePoints = parseInt(document.getElementById('p2Prestige').value);
+	var player3PrestigePoints = parseInt(document.getElementById('p3Prestige').value);
+	
+	//col total points
+	var col1 = parseInt(document.getElementById('col1TP').value);
+	var col2 = parseInt(document.getElementById('col2TP').value);
+	var col3 = parseInt(document.getElementById('col3TP').value);
+	var col4 = parseInt(document.getElementById('col4TP').value);
+	var col5 = parseInt(document.getElementById('col5TP').value);
+	
+	//get player 1 points
+	var tower1player1 = document.getElementById('p1r1').value;
+	var tower2player1 = document.getElementById('p1r2').value;
+	var tower3player1 = document.getElementById('p1r3').value;
+	var tower4player1 = document.getElementById('p1r4').value;
+	var tower5player1 = document.getElementById('p1r5').value;
+	
+	//get player 2 points
+	var tower1player2 = document.getElementById('p2r1').value;
+	var tower2player2 = document.getElementById('p2r2').value;
+	var tower3player2 = document.getElementById('p2r3').value;
+	var tower4player2 = document.getElementById('p2r4').value;
+	var tower5player2 = document.getElementById('p2r5').value;
+
+	//get player 3 points
+	var tower1player3 = document.getElementById('p3r1').value;
+	var tower2player3 = document.getElementById('p3r2').value;
+	var tower3player3 = document.getElementById('p3r3').value;
+	var tower4player3 = document.getElementById('p3r4').value;
+	var tower5player3 = document.getElementById('p3r5').value;
+	
+	//tower arrays
+	tower1Array = [['p1',tower1player1],['p2',tower1player2],['p3',tower1player3]];
+	tower2Array = [['p1',tower2player1],['p2',tower2player2],['p3',tower2player3]];
+	tower3Array = [['p1',tower3player1],['p2',tower3player2],['p3',tower3player3]];
+	tower4Array = [['p1',tower4player1],['p2',tower4player2],['p3',tower4player3]];
+	tower5Array = [['p1',tower5player1],['p2',tower5player2],['p3',tower5player3]];
+	
+	//sort arrays
+	tower1Array.sort(function(a,b){
+		return b[1]-a[1]
+	});
+	tower2Array.sort(function(a,b){
+		return b[1]-a[1]
+	});
+	tower3Array.sort(function(a,b){
+		return b[1]-a[1]
+	});
+	tower4Array.sort(function(a,b){
+		return b[1]-a[1]
+	});
+	
+	tower5Array.sort(function(a,b){
+		return b[1]-a[1]
+	});
+	
+	//tower 1 points
+		//not equal at all
+	if(tower1Array[0][1] != tower1Array[1][1] && tower1Array[1][1] != tower1Array[2][1]){
+		for(var i = 0; i<3;i++){
+			var valueToSet = 1;
+			if(i==1){ valueToSet = 2;}
+			if(i==2){ valueToSet = 4;}
+			
+			if(tower1Array[i][0] == 'p1'){
+				player1Score.push(Math.floor(col1/valueToSet));
+			}else if (tower1Array[i][0] == 'p2'){
+				player2Score.push(Math.floor(col1/valueToSet));
+			}else{
+				player3Score.push(Math.floor(col1/valueToSet));
+			}
+		}
+	}else if (tower1Array[0][1] == tower1Array[1][1] && tower1Array[1][1] == tower1Array[2][1]){
+	//if they are all the same
+		player1Score.push(Math.floor(((col1) + (col1/2) + (col1/4))/3));
+		player2Score.push(Math.floor(((col1) + (col1/2) + (col1/4))/3));
+		player3Score.push(Math.floor(((col1) + (col1/2) + (col1/4))/3));
+	}else if(tower1Array[0][1] != tower1Array[1][1]){
+		//we know they arent all tied, but first could be tied with second, or second with third, so were we confirm 1st and 2nd arent tied
+		//if they arent we know first is first, now assign it
+		if(tower1Array[0][0] == 'p1'){
+			player1Score.push(Math.floor(col1));
+		}else if (tower1Array[0][0] == 'p2'){
+			player2Score.push(Math.floor(col1));
+		}else{
+			player3Score.push(Math.floor(col1));
+		}
+		
+		//now we check if the second and third values are tied, else if they are tied
+		if(tower1Array[1][1] != tower1Array[2][1]){
+			//we can now set second and third place
+			//set 2nd first
+			if(tower1Array[1][0] == 'p1'){
+				player1Score.push(Math.floor(col1/2));
+			}else if (tower1Array[1][0] == 'p2'){
+				player2Score.push(Math.floor(col1/2));
+			}else{
+				player3Score.push(Math.floor(col1/2));
+			}
+			
+			//now set third
+			if(tower1Array[2][0] == 'p1'){
+				player1Score.push(Math.floor(col1/4));
+			}else if (tower1Array[2][0] == 'p2'){
+				player2Score.push(Math.floor(col1/4));
+			}else{
+				player3Score.push(Math.floor(col1/4));
+			}
+		}else{
+			//they are tied
+			//set 2nd first
+			if(tower1Array[1][0] == 'p1'){
+				player1Score.push(Math.floor(((col1/2)+(col1/4))/2));
+			}else if (tower1Array[1][0] == 'p2'){
+				player2Score.push(Math.floor(((col1/2)+(col1/4))/2));
+			}else{
+				player3Score.push(Math.floor(((col1/2)+(col1/4))/2));
+			}
+			
+			//now set third to the same value
+			if(tower1Array[2][0] == 'p1'){
+				player1Score.push(Math.floor(((col1/2)+(col1/4))/2));
+			}else if (tower1Array[2][0] == 'p2'){
+				player2Score.push(Math.floor(((col1/2)+(col1/4))/2));
+			}else{
+				player3Score.push(Math.floor(((col1/2)+(col1/4))/2));
+			}
+			
+		}
+		
+	}else{
+	//value 1 and 2 are tied, but third is not tied
+		//set value 1
+		if(tower1Array[0][0] == 'p1'){
+			player1Score.push(Math.floor((col1+(col1/2))/2));
+		}else if (tower1Array[0][0] == 'p2'){
+			player2Score.push(Math.floor((col1+(col1/2))/2));
+		}else{
+			player3Score.push(Math.floor((col1+(col1/2))/2));
+		}
+		//set 2nd first
+		if(tower1Array[1][0] == 'p1'){
+			player1Score.push(Math.floor((col1+(col1/2))/2));
+		}else if (tower1Array[1][0] == 'p2'){
+			player2Score.push(Math.floor((col1+(col1/2))/2));
+		}else{
+			player3Score.push(Math.floor((col1+(col1/2))/2));
+		}	
+		
+		//set 3 next
+		if(tower1Array[2][0] == 'p1'){
+			player1Score.push(Math.floor(col1/4));
+		}else if (tower1Array[2][0] == 'p2'){
+			player2Score.push(Math.floor(col1/4));
+		}else{			
+			player3Score.push(Math.floor(col1/4));
+		}
+	
+	}
+	//quick fix for any zero values
+	if(tower1Array[0][1] == 0 || tower1Array[1][1] == 0 || tower1Array[2][1] == 0){
+		for(var j=0;j<3;j++){
+			if(tower1Array[j][1]==0){
+				if(tower1Array[j][0]== "p1"){
+					player1Score[0]=0;
+				}else if(tower1Array[j][0]=="p2"){
+					player2Score[0]=0;
+				}else{
+					player3Score[0]=0;
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	
+		//tower 2 points
+		//not equal at all
+	if(tower2Array[0][1] != tower2Array[1][1] && tower2Array[1][1] != tower2Array[2][1]){
+		for(var i = 0; i<3;i++){
+			var valueToSet = 1;
+			if(i==1){ valueToSet = 2;}
+			if(i==2){ valueToSet = 4;}
+			
+			if(tower2Array[i][0] == 'p1'){
+				player1Score.push(Math.floor(col2/valueToSet));
+			}else if (tower2Array[i][0] == 'p2'){
+				player2Score.push(Math.floor(col2/valueToSet));
+			}else{
+				player3Score.push(Math.floor(col2/valueToSet));
+			}
+		}
+	}else if (tower2Array[0][1] == tower2Array[1][1] && tower2Array[1][1] == tower2Array[2][1]){
+	//if they are all the same
+		player1Score.push(Math.floor(((col2) + (col2/2) + (col2/4))/3));
+		player2Score.push(Math.floor(((col2) + (col2/2) + (col2/4))/3));
+		player3Score.push(Math.floor(((col2) + (col2/2) + (col2/4))/3));
+	}else if(tower2Array[0][1] != tower2Array[1][1]){
+		//we know they arent all tied, but first could be tied with second, or second with third, so were we confirm 1st and 2nd arent tied
+		//if they arent we know first is first, now assign it
+		if(tower2Array[0][0] == 'p1'){
+			player1Score.push(Math.floor(col2));
+		}else if (tower2Array[0][0] == 'p2'){
+			player2Score.push(Math.floor(col2));
+		}else{
+			player3Score.push(Math.floor(col2));
+		}
+		
+		//now we check if the second and third values are tied, else if they are tied
+		if(tower2Array[1][1] != tower2Array[2][1]){
+			//we can now set second and third place
+			//set 2nd first
+			if(tower2Array[1][0] == 'p1'){
+				player1Score.push(Math.floor(col2/2));
+			}else if (tower2Array[1][0] == 'p2'){
+				player2Score.push(Math.floor(col2/2));
+			}else{
+				player3Score.push(Math.floor(col2/2));
+			}
+			
+			//now set third
+			if(tower2Array[2][0] == 'p1'){
+				player1Score.push(Math.floor(col2/4));
+			}else if (tower2Array[2][0] == 'p2'){
+				player2Score.push(Math.floor(col2/4));
+			}else{
+				player3Score.push(Math.floor(col2/4));
+			}
+		}else{
+			//they are tied
+			//set 2nd first
+			if(tower2Array[1][0] == 'p1'){
+				player1Score.push(Math.floor(((col2/2)+(col2/4))/2));
+			}else if (tower2Array[1][0] == 'p2'){
+				player2Score.push(Math.floor(((col2/2)+(col2/4))/2));
+			}else{
+				player3Score.push(Math.floor(((col2/2)+(col2/4))/2));
+			}
+			
+			//now set third to the same value
+			if(tower2Array[2][0] == 'p1'){
+				player1Score.push(Math.floor(((col2/2)+(col2/4))/2));
+			}else if (tower2Array[2][0] == 'p2'){
+				player2Score.push(Math.floor(((col2/2)+(col2/4))/2));
+			}else{
+				player3Score.push(Math.floor(((col2/2)+(col2/4))/2));
+			}
+			
+		}
+		
+	}else{
+	//value 1 and 2 are tied, but third is not tied
+		//set value 1
+		if(tower2Array[0][0] == 'p1'){
+			player1Score.push(Math.floor((col2+(col2/2))/2));
+		}else if (tower2Array[0][0] == 'p2'){
+			player2Score.push(Math.floor((col2+(col2/2))/2));
+		}else{
+			player3Score.push(Math.floor((col2+(col2/2))/2));
+		}
+		//set 2nd first
+		if(tower2Array[1][0] == 'p1'){
+			player1Score.push(Math.floor((col2+(col2/2))/2));
+		}else if (tower2Array[1][0] == 'p2'){
+			player2Score.push(Math.floor((col2+(col2/2))/2));
+		}else{
+			player3Score.push(Math.floor((col2+(col2/2))/2));
+		}	
+		
+		//set 3 next
+		if(tower2Array[2][0] == 'p1'){
+			player1Score.push(Math.floor(col2/4));
+		}else if (tower2Array[2][0] == 'p2'){
+			player2Score.push(Math.floor(col2/4));
+		}else{			
+			player3Score.push(Math.floor(col2/4));
+		}
+	
+	}
+	//quick fix for any zero values
+	if(tower2Array[0][1] == 0 || tower2Array[1][1] == 0 || tower2Array[2][1] == 0){
+		for(var j=0;j<3;j++){
+			if(tower2Array[j][1]==0){
+				if(tower2Array[j][0]== "p1"){
+					player1Score[1]=0;
+				}else if(tower2Array[j][0]=="p2"){
+					player2Score[1]=0;
+				}else{
+					player3Score[1]=0;
+				}
+			}
+		}
+	}
+	
+	
+		//tower 3 points
+		//not equal at all
+	if(tower3Array[0][1] != tower3Array[1][1] && tower3Array[1][1] != tower3Array[2][1]){
+		for(var i = 0; i<3;i++){
+			var valueToSet = 1;
+			if(i==1){ valueToSet = 2;}
+			if(i==2){ valueToSet = 4;}
+			
+			if(tower3Array[i][0] == 'p1'){
+				player1Score.push(Math.floor(col3/valueToSet));
+			}else if (tower3Array[i][0] == 'p2'){
+				player2Score.push(Math.floor(col3/valueToSet));
+			}else{
+				player3Score.push(Math.floor(col3/valueToSet));
+			}
+		}
+	}else if (tower3Array[0][1] == tower3Array[1][1] && tower3Array[1][1] == tower3Array[2][1]){
+	//if they are all the same
+		player1Score.push(Math.floor(((col3) + (col3/2) + (col3/4))/3));
+		player2Score.push(Math.floor(((col3) + (col3/2) + (col3/4))/3));
+		player3Score.push(Math.floor(((col3) + (col3/2) + (col3/4))/3));
+	}else if(tower3Array[0][1] != tower3Array[1][1]){
+		//we know they arent all tied, but first could be tied with second, or second with third, so were we confirm 1st and 2nd arent tied
+		//if they arent we know first is first, now assign it
+		if(tower3Array[0][0] == 'p1'){
+			player1Score.push(Math.floor(col3));
+		}else if (tower3Array[0][0] == 'p2'){
+			player2Score.push(Math.floor(col3));
+		}else{
+			player3Score.push(Math.floor(col3));
+		}
+		
+		//now we check if the second and third values are tied, else if they are tied
+		if(tower3Array[1][1] != tower3Array[2][1]){
+			//we can now set second and third place
+			//set 2nd first
+			if(tower3Array[1][0] == 'p1'){
+				player1Score.push(Math.floor(col3/2));
+			}else if (tower3Array[1][0] == 'p2'){
+				player2Score.push(Math.floor(col3/2));
+			}else{
+				player3Score.push(Math.floor(col3/2));
+			}
+			
+			//now set third
+			if(tower3Array[2][0] == 'p1'){
+				player1Score.push(Math.floor(col3/4));
+			}else if (tower3Array[2][0] == 'p2'){
+				player2Score.push(Math.floor(col3/4));
+			}else{
+				player3Score.push(Math.floor(col3/4));
+			}
+		}else{
+			//they are tied
+			//set 2nd first
+			if(tower3Array[1][0] == 'p1'){
+				player1Score.push(Math.floor(((col3/2)+(col3/4))/2));
+			}else if (tower3Array[1][0] == 'p2'){
+				player2Score.push(Math.floor(((col3/2)+(col3/4))/2));
+			}else{
+				player3Score.push(Math.floor(((col3/2)+(col3/4))/2));
+			}
+			
+			//now set third to the same value
+			if(tower3Array[2][0] == 'p1'){
+				player1Score.push(Math.floor(((col3/2)+(col3/4))/2));
+			}else if (tower3Array[2][0] == 'p2'){
+				player2Score.push(Math.floor(((col3/2)+(col3/4))/2));
+			}else{
+				player3Score.push(Math.floor(((col3/2)+(col3/4))/2));
+			}
+			
+		}
+		
+	}else{
+	//value 1 and 2 are tied, but third is not tied
+		//set value 1
+		if(tower3Array[0][0] == 'p1'){
+			player1Score.push(Math.floor((col3+(col3/2))/2));
+		}else if (tower3Array[0][0] == 'p2'){
+			player2Score.push(Math.floor((col3+(col3/2))/2));
+		}else{
+			player3Score.push(Math.floor((col3+(col3/2))/2));
+		}
+		//set 2nd first
+		if(tower3Array[1][0] == 'p1'){
+			player1Score.push(Math.floor((col3+(col3/2))/2));
+		}else if (tower3Array[1][0] == 'p2'){
+			player2Score.push(Math.floor((col3+(col3/2))/2));
+		}else{
+			player3Score.push(Math.floor((col3+(col3/2))/2));
+		}	
+		
+		//set 3 next
+		if(tower3Array[2][0] == 'p1'){
+			player1Score.push(Math.floor(col3/4));
+		}else if (tower3Array[2][0] == 'p2'){
+			player2Score.push(Math.floor(col3/4));
+		}else{			
+			player3Score.push(Math.floor(col3/4));
+		}
+	
+	}
+		//quick fix for any zero values
+	if(tower3Array[0][1] == 0 || tower3Array[1][1] == 0 || tower3Array[2][1] == 0){
+		for(var j=0;j<3;j++){
+			if(tower3Array[j][1]==0){
+				if(tower3Array[j][0]== "p1"){
+					player1Score[2]=0;
+				}else if(tower3Array[j][0]=="p2"){
+					player2Score[2]=0;
+				}else{
+					player3Score[2]=0;
+				}
+			}
+		}
+	}
+	
+	
+		//tower 4 points
+		//not equal at all
+	if(tower4Array[0][1] != tower4Array[1][1] && tower4Array[1][1] != tower4Array[2][1]){
+		for(var i = 0; i<3;i++){
+			var valueToSet = 1;
+			if(i==1){ valueToSet = 2;}
+			if(i==2){ valueToSet = 4;}
+			
+			if(tower4Array[i][0] == 'p1'){
+				player1Score.push(Math.floor(col4/valueToSet));
+			}else if (tower4Array[i][0] == 'p2'){
+				player2Score.push(Math.floor(col4/valueToSet));
+			}else{
+				player3Score.push(Math.floor(col4/valueToSet));
+			}
+		}
+	}else if (tower4Array[0][1] == tower4Array[1][1] && tower4Array[1][1] == tower4Array[2][1]){
+	//if they are all the same
+		player1Score.push(Math.floor(((col4) + (col4/2) + (col4/4))/3));
+		player2Score.push(Math.floor(((col4) + (col4/2) + (col4/4))/3));
+		player3Score.push(Math.floor(((col4) + (col4/2) + (col4/4))/3));
+	}else if(tower4Array[0][1] != tower4Array[1][1]){
+		//we know they arent all tied, but first could be tied with second, or second with third, so were we confirm 1st and 2nd arent tied
+		//if they arent we know first is first, now assign it
+		if(tower4Array[0][0] == 'p1'){
+			player1Score.push(Math.floor(col4));
+		}else if (tower4Array[0][0] == 'p2'){
+			player2Score.push(Math.floor(col4));
+		}else{
+			player3Score.push(Math.floor(col4));
+		}
+		
+		//now we check if the second and third values are tied, else if they are tied
+		if(tower4Array[1][1] != tower4Array[2][1]){
+			//we can now set second and third place
+			//set 2nd first
+			if(tower4Array[1][0] == 'p1'){
+				player1Score.push(Math.floor(col4/2));
+			}else if (tower4Array[1][0] == 'p2'){
+				player2Score.push(Math.floor(col4/2));
+			}else{
+				player3Score.push(Math.floor(col4/2));
+			}
+			
+			//now set third
+			if(tower4Array[2][0] == 'p1'){
+				player1Score.push(Math.floor(col4/4));
+			}else if (tower4Array[2][0] == 'p2'){
+				player2Score.push(Math.floor(col4/4));
+			}else{
+				player3Score.push(Math.floor(col4/4));
+			}
+		}else{
+			//they are tied
+			//set 2nd first
+			if(tower4Array[1][0] == 'p1'){
+				player1Score.push(Math.floor(((col4/2)+(col4/4))/2));
+			}else if (tower4Array[1][0] == 'p2'){
+				player2Score.push(Math.floor(((col4/2)+(col4/4))/2));
+			}else{
+				player3Score.push(Math.floor(((col4/2)+(col4/4))/2));
+			}
+			
+			//now set third to the same value
+			if(tower4Array[2][0] == 'p1'){
+				player1Score.push(Math.floor(((col4/2)+(col4/4))/2));
+			}else if (tower4Array[2][0] == 'p2'){
+				player2Score.push(Math.floor(((col4/2)+(col4/4))/2));
+			}else{
+				player3Score.push(Math.floor(((col4/2)+(col4/4))/2));
+			}
+			
+		}
+		
+	}else{
+	//value 1 and 2 are tied, but third is not tied
+		//set value 1
+		if(tower4Array[0][0] == 'p1'){
+			player1Score.push(Math.floor((col4+(col4/2))/2));
+		}else if (tower4Array[0][0] == 'p2'){
+			player2Score.push(Math.floor((col4+(col4/2))/2));
+		}else{
+			player3Score.push(Math.floor((col4+(col4/2))/2));
+		}
+		//set 2nd first
+		if(tower4Array[1][0] == 'p1'){
+			player1Score.push(Math.floor((col4+(col4/2))/2));
+		}else if (tower4Array[1][0] == 'p2'){
+			player2Score.push(Math.floor((col4+(col4/2))/2));
+		}else{
+			player3Score.push(Math.floor((col4+(col4/2))/2));
+		}	
+		
+		//set 3 next
+		if(tower4Array[2][0] == 'p1'){
+			player1Score.push(Math.floor(col4/4));
+		}else if (tower4Array[2][0] == 'p2'){
+			player2Score.push(Math.floor(col4/4));
+		}else{			
+			player3Score.push(Math.floor(col4/4));
+		}
+	
+	}
+		//quick fix for any zero values
+	if(tower4Array[0][1] == 0 || tower4Array[1][1] == 0 || tower4Array[2][1] == 0){
+		for(var j=0;j<3;j++){
+			if(tower4Array[j][1]==0){
+				if(tower4Array[j][0]== "p1"){
+					player1Score[3]=0;
+				}else if(tower4Array[j][0]=="p2"){
+					player2Score[3]=0;
+				}else{
+					player3Score[3]=0;
+				}
+			}
+		}
+	}
+	
+	
+			//tower 5 points
+		//not equal at all
+	if(tower5Array[0][1] != tower5Array[1][1] && tower5Array[1][1] != tower5Array[2][1]){
+		for(var i = 0; i<3;i++){
+			var valueToSet = 1;
+			if(i==1){ valueToSet = 2;}
+			if(i==2){ valueToSet = 4;}
+			
+			if(tower5Array[i][0] == 'p1'){
+				player1Score.push(Math.floor(col5/valueToSet));
+			}else if (tower5Array[i][0] == 'p2'){
+				player2Score.push(Math.floor(col5/valueToSet));
+			}else{
+				player3Score.push(Math.floor(col5/valueToSet));
+			}
+		}
+	}else if (tower5Array[0][1] == tower5Array[1][1] && tower5Array[1][1] == tower5Array[2][1]){
+	//if they are all the same
+		player1Score.push(Math.floor(((col5) + (col5/2) + (col5/4))/3));
+		player2Score.push(Math.floor(((col5) + (col5/2) + (col5/4))/3));
+		player3Score.push(Math.floor(((col5) + (col5/2) + (col5/4))/3));
+	}else if(tower5Array[0][1] != tower5Array[1][1]){
+		//we know they arent all tied, but first could be tied with second, or second with third, so were we confirm 1st and 2nd arent tied
+		//if they arent we know first is first, now assign it
+		if(tower5Array[0][0] == 'p1'){
+			player1Score.push(Math.floor(col5));
+		}else if (tower5Array[0][0] == 'p2'){
+			player2Score.push(Math.floor(col5));
+		}else{
+			player3Score.push(Math.floor(col5));
+		}
+		
+		//now we check if the second and third values are tied, else if they are tied
+		if(tower5Array[1][1] != tower5Array[2][1]){
+			//we can now set second and third place
+			//set 2nd first
+			if(tower5Array[1][0] == 'p1'){
+				player1Score.push(Math.floor(col5/2));
+			}else if (tower5Array[1][0] == 'p2'){
+				player2Score.push(Math.floor(col5/2));
+			}else{
+				player3Score.push(Math.floor(col5/2));
+			}
+			
+			//now set third
+			if(tower5Array[2][0] == 'p1'){
+				player1Score.push(Math.floor(col5/4));
+			}else if (tower5Array[2][0] == 'p2'){
+				player2Score.push(Math.floor(col5/4));
+			}else{
+				player3Score.push(Math.floor(col5/4));
+			}
+		}else{
+			//they are tied
+			//set 2nd first
+			if(tower5Array[1][0] == 'p1'){
+				player1Score.push(Math.floor(((col5/2)+(col5/4))/2));
+			}else if (tower5Array[1][0] == 'p2'){
+				player2Score.push(Math.floor(((col5/2)+(col5/4))/2));
+			}else{
+				player3Score.push(Math.floor(((col5/2)+(col5/4))/2));
+			}
+			
+			//now set third to the same value
+			if(tower5Array[2][0] == 'p1'){
+				player1Score.push(Math.floor(((col5/2)+(col5/4))/2));
+			}else if (tower5Array[2][0] == 'p2'){
+				player2Score.push(Math.floor(((col5/2)+(col5/4))/2));
+			}else{
+				player3Score.push(Math.floor(((col5/2)+(col5/4))/2));
+			}
+			
+		}
+		
+	}else{
+	//value 1 and 2 are tied, but third is not tied
+		//set value 1
+		if(tower5Array[0][0] == 'p1'){
+			player1Score.push(Math.floor((col5+(col5/2))/2));
+		}else if (tower5Array[0][0] == 'p2'){
+			player2Score.push(Math.floor((col5+(col5/2))/2));
+		}else{
+			player3Score.push(Math.floor((col5+(col5/2))/2));
+		}
+		//set 2nd first
+		if(tower5Array[1][0] == 'p1'){
+			player1Score.push(Math.floor((col5+(col5/2))/2));
+		}else if (tower5Array[1][0] == 'p2'){
+			player2Score.push(Math.floor((col5+(col5/2))/2));
+		}else{
+			player3Score.push(Math.floor((col5+(col5/2))/2));
+		}	
+		
+		//set 3 next
+		if(tower5Array[2][0] == 'p1'){
+			player1Score.push(Math.floor(col5/4));
+		}else if (tower5Array[2][0] == 'p2'){
+			player2Score.push(Math.floor(col5/4));
+		}else{			
+			player3Score.push(Math.floor(col5/4));
+		}
+	
+	}
+	
+		//quick fix for any zero values
+	if(tower5Array[0][1] == 0 || tower5Array[1][1] == 0 || tower5Array[2][1] == 0){
+		for(var j=0;j<3;j++){
+			if(tower5Array[j][1]==0){
+				if(tower5Array[j][0]== "p1"){
+					player1Score[4]=0;
+				}else if(tower5Array[j][0]=="p2"){
+					player2Score[4]=0;
+				}else{
+					player3Score[4]=0;
+				}
+			}
+		}
+	}
+	
+	
+	//sum up pts
+	for(var k=0;k<5;k++){
+		finalScoreP1+=parseInt(player1Score[k]);
+		finalScoreP2+=parseInt(player2Score[k]);
+		finalScoreP3+=parseInt(player3Score[k]);
+		console.log("Tower:"+(k+1)+" p1 score: " + player1Score[k] + " p2 score:" +player2Score[k] + " p3 score:" +player3Score[k]);
+	}
+	//sum scores
+	document.getElementById('resultsP1').innerHTML = "Player 1: " +player1Score + " 	Tower Score: " + finalScoreP1 + " 	Prestige: " + player1PrestigePoints + " 	Final Score: " + (finalScoreP1+player1PrestigePoints);
+	document.getElementById('resultsP2').innerHTML = "Player 2: " +player2Score + " 	Tower Score: " + finalScoreP2 + " 	Prestige: " + player2PrestigePoints + " 	Final Score: " + (finalScoreP2+player2PrestigePoints);
+	document.getElementById('resultsP3').innerHTML = "Player 3: " +player3Score + " 	Tower Score: " + finalScoreP3 + " 	Prestige: " + player3PrestigePoints + " 	Final Score: " + (finalScoreP3+player3PrestigePoints);
+	
+	//log non tied scores
+	console.log("Non-tied scores for 1st, 2nd, 3rd, are:");
+	console.log("Tower 1, 1st:"+col1+" 2nd:"+(col1/2)+" 3rd:"+(col1/4));
+	console.log("Tower 2, 1st:"+col2+" 2nd:"+(col2/2)+" 3rd:"+(col2/4));
+	console.log("Tower 3, 1st:"+col3+" 2nd:"+(col3/2)+" 3rd:"+(col3/4));
+	console.log("Tower 4, 1st:"+col4+" 2nd:"+(col4/2)+" 3rd:"+(col4/4));
+	console.log("Tower 5, 1st:"+col5+" 2nd:"+(col5/2)+" 3rd:"+(col5/4));
+	
+};
+
+
+function fourPlayerGame(){
+	var player1Score = [];
+	var player2Score = [];
+	var player3Score = [];
+	var player4Score = [];
+
+	var finalScoreP1 = 0;
+	var finalScoreP2 = 0;
+	var finalScoreP3 = 0;
+	var finalScoreP4 = 0;
+	
+	//get prestige points
+	var player1PrestigePoints = parseInt(document.getElementById('p1Prestige').value);
+	var player2PrestigePoints = parseInt(document.getElementById('p2Prestige').value);
+	var player3PrestigePoints = parseInt(document.getElementById('p3Prestige').value);
+	var player4PrestigePoints = parseInt(document.getElementById('p3Prestige').value);
+	
+	//col total points
+	var col1 = parseInt(document.getElementById('col1TP').value);
+	var col2 = parseInt(document.getElementById('col2TP').value);
+	var col3 = parseInt(document.getElementById('col3TP').value);
+	var col4 = parseInt(document.getElementById('col4TP').value);
+	var col5 = parseInt(document.getElementById('col5TP').value);
+	var col6 = parseInt(document.getElementById('col6TP').value);
+	var col = [col1,col2,col3,col4,col5,col6];
+	
+	//get scores
+	var p1 = [document.getElementById('p1r1').value,document.getElementById('p1r2').value,document.getElementById('p1r3').value,document.getElementById('p1r4').value,document.getElementById('p1r5').value,document.getElementById('p1r6').value];	
+	var p2 = [document.getElementById('p2r1').value,document.getElementById('p2r2').value,document.getElementById('p2r3').value,document.getElementById('p2r4').value,document.getElementById('p2r5').value,document.getElementById('p2r6').value];
+	var p3 = [document.getElementById('p3r1').value,document.getElementById('p3r2').value,document.getElementById('p3r3').value,document.getElementById('p3r4').value,document.getElementById('p3r5').value,document.getElementById('p3r6').value];
+	var p4 = [document.getElementById('p4r1').value,document.getElementById('p4r2').value,document.getElementById('p4r3').value,document.getElementById('p4r4').value,document.getElementById('p4r5').value,document.getElementById('p4r6').value];
+	
+	console.log(p1);
+	console.log(p2);
+	console.log(p3);
+	console.log(p4);
+	
+	//formulas for each column
+	
+	//tower 1 - all tied
+	var tiedFormulaColumn1 = Math.floor((col1 + Math.floor(col1/2) + Math.floor(col1/4) + Math.floor(col1/8))/4);
+	var tied1st2ndColumn1 = Math.floor((col1 + Math.floor(col1/2))/2);
+	var tied2nd3rdColumn1 = Math.floor((Math.floor(col1/2) + Math.floor(col1/4))/2);
+	var tied3rd4thColumn1 = Math.floor((Math.floor(col1/4) + Math.floor(col1/8))/2);
+	var tied1st2nd3rdColumn1 = Math.floor((col1 + Math.floor(col1/2) + Math.floor(col1/4))/3);
+	var tied2nd3rd4thColumn1 = Math.floor((Math.floor(col1/2) + Math.floor(col1/4) + Math.floor(col1/8))/3);
+	
+	
+	//scoring tower 1
+	for(var i=0;i<4;i++){
+		//if all are equal
+		if(p1[i] == p2[i] && p1[i] == p3[i] && p1[i] == p4[i] && p2[i] == p3[i] && p2[i] == p4[i] && p3[i] == p4[i]){
+			player1Score.push(tiedFormulaColumn1);
+			player2Score.push(tiedFormulaColumn1);
+			player3Score.push(tiedFormulaColumn1);
+			player4Score.push(tiedFormulaColumn1);
+		//if none are equal
+		}else if(p1[i] != p2[i] && p1[i] != p3[i] && p1[i] != p4[i] && p2[i] != p3[i] && p2[i] != p4[i] && p3[i] != p4[i]){
+			//p1 is greatest
+			if(p1[i]>p2[i]&& p1[i]>p3[i] && p1[i]>p4[i]){
+				player1Score.push(col[i]);
+				//if p2 is 2nd greatest
+				if(p2[i]>p3[i] && p2[i]>p4[i]){
+					player2Score.push(Math.floor(col[i]/2));
+					//if p3 is greater than p4
+					if(p3[i]>p4[i]){
+						player3Score.push(Math.floor(col[i]/4));
+						player4Score.push(Math.floor(col[i]/8));
+					}else{
+						player4Score.push(Math.floor(col[i]/4));
+						player3Score.push(Math.floor(col[i]/8));
+					}
+				//if p3 is greatest
+				}else if(p3[i]>p2[i] && p3[i]>p4[i]){
+					player3Score.push(Math.floor(col[i]/2));
+					//if p2 is greater than p4
+					if(p2[i]>p4[i]){
+						player2Score.push(Math.floor(col[i]/4));
+						player4Score.push(Math.floor(col[i]/8));
+					}else{
+						player4Score.push(Math.floor(col[i]/4));
+						player2Score.push(Math.floor(col[i]/8));
+					}
+				}
+				//if 
+			}
+		
+		}
+	}
+		
+	
+	
+	
+};
+</script>
+
+</body>
+</html>
