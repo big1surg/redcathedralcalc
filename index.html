@@ -18,6 +18,50 @@
 	background-size: cover;
 }
 
+.border{
+ padding: 10px 10px 10px 10px;
+
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 	
 </style>
 
@@ -29,182 +73,212 @@
 <div class="container-fluid">
 
 <div class="jumbotron">
-  <h1 class="display-4 text-red">The Red Cathedral Calculator</h1>
+  <h1 class="display-6">The Red Cathedral Calculator</h1>
   <h5>Quickly score your points</h5>
 </div>
 
 
 <div class ="container">
-	<form>
-		<div class="form-group row">
-			<label class="col-sm-1 col-form-label"></label>
-			<label for="played" class="col-sm-1 col-form-label">Played?</label>
-			<label for="name" class="col-sm-1 col-form-label">Prestige</label>
-			<label for="row1" class="col-sm-1 col-form-label">Tower 1</label>
-			<label for="row2" class="col-sm-1 col-form-label">Tower 2</label>
-			<label for="row3" class="col-sm-1 col-form-label">Tower 3</label>
-			<label for="row4" class="col-sm-1 col-form-label">Tower 4</label>
-			<label for="row5" class="col-sm-1 col-form-label">Tower 5</label>
-			<label for="row6" class="col-sm-1 col-form-label">Tower 6</label>
-		</div>
-		<div class="form-group row">
-			<label for = "totalPointsLabel" class="col-sm-3 col-form-label">Total Points</label>
-			<div class = "col-sm-1">
-				<input id="col1TP" placeholder="0">
+		<!--players button -->
+	<div class="text-center">
+		<button type="button" class="btn btn-primary btn-block btn-sm" onclick="setPlayerToTwo()">Solo/2P</button>
+		<button type="button" class="btn btn-primary btn-block btn-sm" onclick="setPlayerToThree()">3P</button>
+		<button type="button" class="btn btn-primary btn-block btn-sm" onclick="setPlayerToFour()">4P</button>
+	</div>
+	<br>
+		<!--prestige scores-->
+	<div class="border border-success rounded">
+		<label for="played"><b>Prestige Score</b> - Enter Value</label>
+		<form>
+		  <div class="form-group row">
+			<label for="prestigeScorePlayer1" class="col-sm-2 col-form-label">P1</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="p1Prestige" placeholder="0">
 			</div>
-			<div class = "col-sm-1">
-				<input id="col2TP" placeholder="0">
+		  </div>
+		  <div class="form-group row">
+			<label for="prestigeScorePlayer2" class="col-sm-2 col-form-label">P2</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="p2Prestige" placeholder="0">
 			</div>
-			<div class = "col-sm-1">
-				<input id="col3TP" placeholder="0">
+		  </div>
+		</form>
+	</div>
+	<br>
+	
+	<!--tower 1 scores-->
+	<div class="border border-primary rounded" id="t1Scores">
+		<label for="played"><b>Tower 1</b></label>
+		<form>
+		  <div class="form-group row">
+			<label for="tower1Score" class="col-sm-2 col-form-label">Value</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="col1TP" placeholder="0">
 			</div>
-			<div class = "col-sm-1">
-				<input id="col4TP" placeholder="0">
+		  </div>
+		  <div class="form-group row">
+			<label for="tower1ScorePlayer1" class="col-sm-2 col-form-label">P1 Contributions</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="p1r1" placeholder="0">
 			</div>
-			<div class = "col-sm-1">
-				<input id="col5TP" placeholder="0">
+		  </div>
+		  <div class="form-group row">
+			<label for="tower1ScorePlayer2" class="col-sm-2 col-form-label">P2 Contributions</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="p2r1" placeholder="0">
 			</div>
-			<div class = "col-sm-1">
-				<input id="col6TP" placeholder="0">
+		  </div>
+		  <div class="form-group row" id="player3Tower1Block">
+			<label for="tower1ScorePlayer3" class="col-sm-2 col-form-label">P3 Contributions</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="p3r1" placeholder="0">
 			</div>
+		  </div>
+		</form>
+	</div>
+	<br>
+		<!--tower 2 scores-->
+	<div class="border border-danger rounded" id="t2Scores">
+		<label for="played"><b>Tower 2</b></label>
+		<form>
+		  <div class="form-group row">
+			<label for="tower2Score" class="col-sm-2 col-form-label">Value</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="col2TP" placeholder="0">
+			</div>
+		  </div>
+		  <div class="form-group row">
+			<label for="tower2ScorePlayer1" class="col-sm-2 col-form-label">P1 Contributions</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="p1r2" placeholder="0">
+			</div>
+		  </div>
+		  <div class="form-group row">
+			<label for="tower2ScorePlayer2" class="col-sm-2 col-form-label">P2 Contributions</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="p2r2" placeholder="0">
+			</div>
+		  </div>
+		</form>
+	</div>
+	<br>
 
-		</div>
-		
-<!-----------------------------------------------------------player score --------------------------------------->
-		<div class="form-group row" style="background-color: #e0e0eb;">
-			<label for = "p1" class="col-sm-1 col-form-label">P1</label>
-			<div class = "col-sm-1 form-check">
+	<!--tower 3 scores-->
+	<div class="border border-info rounded" id="t3Scores">
+		<label for="played"><b>Tower 3 Score</b></label>
+		<form>
+		  <div class="form-group row">
+			<label for="tower3Score" class="col-sm-2 col-form-label">Value</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="col3TP" placeholder="0">
 			</div>
-			<div class = "col-sm-1">
-				<input id="p1Prestige" placeholder="0">
+		  </div>
+		  <div class="form-group row">
+			<label for="tower3ScorePlayer1" class="col-sm-2 col-form-label">P1 Contributions</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="p1r3" placeholder="0">
 			</div>
-			<div class = "col-sm-1">
-				<input id="p1r1" placeholder="0">
+		  </div>
+		  <div class="form-group row">
+			<label for="tower3ScorePlayer2" class="col-sm-2 col-form-label">P2 Contributions</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="p2r3" placeholder="0">
 			</div>
-			<div class = "col-sm-1">
-				<input id="p1r2" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p1r3" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p1r4" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p1r5" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p1r6" placeholder="0">
-			</div>
-		</div>
-<!-----------------------------------------------------------player score --------------------------------------->
-		<div class="form-group row">
-			<label for = "p2" class="col-sm-1 col-form-label">P2</label>
-			<div class = "col-sm-1 form-check">
-				<input class="form-check-input" type="checkbox" value="" id="player2Present">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p2Prestige" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p2r1" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p2r2" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p2r3" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p2r4" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p2r5" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p2r6" placeholder="0">
-			</div>
-		</div>
-<!-----------------------------------------------------------player score --------------------------------------->
-		<div class="form-group row" style="background-color: #e0e0eb;">
-			<label for = "p3" class="col-sm-1 col-form-label" >P3</label>
-			<div class = "col-sm-1 form-check">
-				<input class="form-check-input" type="checkbox" value="" id="player3Present">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p3Prestige" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p3r1" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p3r2" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p3r3" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p3r4" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p3r5" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p3r6" placeholder="0">
-			</div>
-		</div>
-<!-----------------------------------------------------------player score --------------------------------------->
-		<div class="form-group row">
-			<label for = "p4" class="col-sm-1 col-form-label">P4</label>
-			<div class = "col-sm-1 form-check">
-				<input class="form-check-input" type="checkbox" value="" id="player4Present">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p4Prestige" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p4r1" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p4r2" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p4r3" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p4r4" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p4r5" placeholder="0">
-			</div>
-			<div class = "col-sm-1">
-				<input id="p4r6" placeholder="0">
-			</div>
-		</div>
-		<button type="button" onclick="getPlayerCount()" class="btn btn-primary">Calculate</button>
-	</form>
+		  </div>
+		</form>
+	</div>
+	<br>
 
-	<p id="playerCountValue"></p>
-	<div id="resultsP1">
+		<!--tower 4 scores-->
+	<div class="border border-secondary rounded" id="t4Scores">
+		<label for="played"><b>Tower 4 Score</b></label>
+		<form>
+		  <div class="form-group row">
+			<label for="tower4Score" class="col-sm-2 col-form-label">Value</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="col4TP" placeholder="0">
+			</div>
+		  </div>
+		  <div class="form-group row">
+			<label for="tower4ScorePlayer1" class="col-sm-2 col-form-label">P1 Contributions</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="p1r4" placeholder="0">
+			</div>
+		  </div>
+		  <div class="form-group row">
+			<label for="tower3ScorePlayer2" class="col-sm-2 col-form-label">P2 Contributions</label>
+			<div class="col-sm-10">
+			  <input class="form-control" id="p2r4" placeholder="0">
+			</div>
+		  </div>
+		</form>
 	</div>
-		<div id="resultsP2">
-	</div>
-		<div id="resultsP3">
-	</div>
-		<div id="resultsP4">
-	</div>
+	<br>
 
-</div> <!---container-->
+
+<button type="button" onclick="getPlayerCount()" class="btn btn-primary btn-block">Calculate</button>
+<br>
+<br>
+</div><!--container-->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+	<p id="scoreResultsP1Name"></p>
+    <p id="scoreResultsP1"></p>
+	<p id="scoreResultsP2Name"></p>
+	<p id="scoreResultsP2"></p>
+	<p id="scoreResultsP3Name"></p>
+	<p id="scoreResultsP3"></p>
+	<p id="scoreResultsP4Name"></p>
+	<p id="scoreResultsP4"></p>
+  </div>
+
+</div>
 
 <script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
+var playerCount = 1;
+function setPlayerToTwo(){ 
+playerCount = 2; 
+console.log("Players:"+playerCount);
+var x = document.getElementById("player3Tower1Block");
+x.style.display = "none";
+};
+function setPlayerToThree() { 
+playerCount = 3; 
+console.log("Players:"+playerCount);
+var x = document.getElementById("player3Tower1Block");
+x.style.display = "block";
+};
+function setPlayerToFour() { playerCount =4; console.log("Players:"+playerCount);};
+
 function getPlayerCount() {
-	var playerCount = 1;
-	for(var i=0; i<3;i++){
-		if(document.getElementById('player'+(i+2)+'Present').checked){
-			playerCount++;
-		}
-	}
-	document.getElementById('playerCountValue').innerHTML = 'Scoring a ' + playerCount + ' player game';
 	if(playerCount == 1 || playerCount == 2){
 		soloTwoPlayerGame();
 	}else if (playerCount == 3){
@@ -335,8 +409,15 @@ function soloTwoPlayerGame(){
 		finalScoreP2+=parseInt(player2Score[k]);
 	}
 	//sum scores
-	document.getElementById('resultsP1').innerHTML = "Player 1: " +player1Score + " 	Tower Score: " + finalScoreP1 + " 	Prestige: " + player1PrestigePoints + " 	Final Score: " + (finalScoreP1+player1PrestigePoints);
-	document.getElementById('resultsP2').innerHTML = "Player 2: " +player2Score + " 	Tower Score: " + finalScoreP2 + " 	Prestige: " + player2PrestigePoints + " 	Final Score: " + (finalScoreP2+player2PrestigePoints);
+	console.log("Player 1: " +player1Score + " 	Tower Score: " + finalScoreP1 + " 	Prestige: " + player1PrestigePoints + " 	Final Score: " + (finalScoreP1+player1PrestigePoints));
+	console.log("Player 2: " +player2Score + " 	Tower Score: " + finalScoreP2 + " 	Prestige: " + player2PrestigePoints + " 	Final Score: " + (finalScoreP2+player2PrestigePoints));
+	
+	//add scores to modal
+	document.getElementById("scoreResultsP1Name").innerHTML = "Player 1";
+	document.getElementById("scoreResultsP1").innerHTML = ("Prestige:"+player1PrestigePoints+" T1:"+ player1Score[0] + " T2:"+ player1Score[1] + " T3:"+player1Score[2]+" T4:"+player1Score[3]+" Final:"+(finalScoreP1+player1PrestigePoints));
+	document.getElementById("scoreResultsP2Name").innerHTML = "Player 2";
+	document.getElementById("scoreResultsP2").innerHTML = ("Prestige:"+player2PrestigePoints+" T1:"+ player2Score[0] + " T2:"+ player2Score[1] + " T3:"+player2Score[2]+" T4:"+player2Score[3]+" Final:"+(finalScoreP2+player2PrestigePoints));
+	modal.style.display = "block";
 	
 	
 };
